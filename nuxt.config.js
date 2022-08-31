@@ -1,4 +1,4 @@
-  const axios = import('axios')
+import axios from 'axios'
 
 
 export default {
@@ -6,7 +6,7 @@ export default {
   generate: {
     routes() {
       return axios.get('https://back2023.herokuapp.com/produits').then(res => {
-        return res.data.map(produit => {
+        return res.data.produits.map(produit => {
           return '/produits/' + produit.id
         })
       })
