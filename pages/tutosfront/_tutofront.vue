@@ -8,7 +8,8 @@
         <ul v-if="tutos[tutoSel - 1].pre!= null">
             <li v-for="tutoSelect in tutos[tutoSel-1].pre" :key="tutoSelect.id">
                 <p v-if="tutos[tutoSelect-1] != null">
-                    <NuxtLink id="nuxt2" :to="{ name: 'tutosfront-tutofront', params: { tutofront: tutoSelect } } ">👉 {{
+                    <NuxtLink id="nuxt2" :to="{ name: 'tutosfront-tutofront', params: { tutofront: tutoSelect } } ">👉
+                        {{
                         tutos[tutoSelect-1].title
                         }}
                     </NuxtLink>
@@ -18,11 +19,14 @@
         <p class="underline">Instructions :</p>
         <img v-if="tutos[tutoSel - 1].img != ''" :src="require(`~/assets/images/${tutos[tutoSel - 1].img}`)" alt=""
             class="object-fill mx-auto w-full" />
+        <v-container fluid>
+            <v-textarea v-if="tutos[tutoSel - 1].code != 0.0" v-model="tutos[tutoSel-1].code"
+                background-color="grey lighten-2" auto-grow filled outlined label="Code"
+                readonly="readonly">
+            </v-textarea>
+        </v-container>
 
-        <p v-if="tutos[tutoSel - 1].code != 0.0"
-            class="container border-solid border-2 bg-gray-200 text-center mx-auto border-gray-500"> {{
-            tutos[tutoSel-1].code }}
-        </p>
+
         <p>{{ tutos[tutoSel - 1].text}}
         </p>
         <div v-if="tutos[tutoSel - 1].resultathtml != ''" class="container">
@@ -39,8 +43,9 @@
                     :src="require(`~/assets/images/${tutos[tutoSelection - 1].img}`)" alt=""
                     class="object-fill mx-auto w-full" />
                 <p v-if="tutos[tutoSelection - 1].code != 0.0"
-                    class="container border-solid border-2 bg-gray-200 text-center mx-auto border-gray-500"> {{
-                    tutos[tutoSelection-1].code }}
+                    class="container border-solid border-2 bg-gray-200 text-center mx-auto border-gray-500">
+                    <textarea v-model="tutos[tutoSelection-1].code" style="margin: 2px; width: 770px; height: 103px;">
+                    </textarea>
                 </p>
                 <div v-if="tutos[tutoSelection - 1].resultathtml != ''" class="container">
                     <p>Voici le resultat sur votre navigateur</p>
@@ -72,6 +77,7 @@
 
 <script>
 
+
 export default {
     name: "TutoName",
     // eslint-disable-next-line vue/require-prop-types
@@ -90,11 +96,11 @@ export default {
     },
 
 
+
 }
 </script>
 
 <style>
-
 
 #nuxt2 {
     margin: 10px;

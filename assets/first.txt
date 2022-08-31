@@ -1,0 +1,48 @@
+<template>
+  <div>
+    <div id="navbar">
+      <!-- creation du logo -->
+      <h1 id="logo">
+        SiteVenteAuto.com
+      </h1>
+      <!-- création des liens -->
+      <NuxtLink id="nav" to="/">
+        Accueil
+      </NuxtLink>
+      <NuxtLink id="nav" to="/produits">
+        Produits
+      </NuxtLink>
+      <NuxtLink id="nav" to="/about">
+        A propos
+      </NuxtLink>
+    </div>
+    <!-- affichage des pages -->
+    <Nuxt />
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'DefaultLayout'
+}
+</script>
+
+<style>
+#navbar {
+  background-color: aqua;
+  display: flex;
+}
+
+#logo {
+  margin: 20px;
+  color: blue;
+}
+
+#nav {
+  display: flex;
+  font-size: larger;
+  font-weight: bold;
+  margin-left: 50px;
+  align-items: center;
+}
+</style>
