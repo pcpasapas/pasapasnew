@@ -1,0 +1,2 @@
+django: gunicorn backend.wsgi:application --bind $HOST:$DJANGO_PORT
+node: nuxt start
