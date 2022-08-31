@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 
 export default {
   target: 'static',
@@ -59,12 +57,12 @@ export default {
 
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth', '@nuxtjs/tailwindcss'],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    // baseURL: "https://back2023.herokuapp.com/produits",
+    baseURL: "https://back2023.herokuapp.com/",
     proxy: true,
   },
 
