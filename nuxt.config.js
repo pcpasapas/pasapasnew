@@ -1,4 +1,18 @@
+  const axios = import('axios')
+
+
 export default {
+  target: 'static',
+  generate: {
+    routes() {
+      return axios.get('https://back2023.herokuapp.com/produits').then(res => {
+        return res.data.map(produit => {
+          return '/produits/' + produit.id
+        })
+      })
+    }
+  },
+
   router: {
     base: '/pasapasnew/'
   },
@@ -49,6 +63,8 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/google-analytics',
   ],
+
+
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/axios', '@nuxtjs/auth'],
@@ -119,3 +135,5 @@ export default {
     id: 'UA-237994907-1',
   },
 }
+
+
