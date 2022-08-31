@@ -3,15 +3,7 @@ import axios from 'axios'
 
 export default {
   target: 'static',
-  generate: {
-    routes() {
-      return axios.get('https://back2023.herokuapp.com/produits').then(res => {
-        return res.data.produits.map(produit => {
-          return '/produits/' + produit.id
-        })
-      })
-    }
-  },
+  
 
   router: {
     base: '/pasapasnew/'
