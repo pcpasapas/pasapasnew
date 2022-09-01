@@ -4,7 +4,7 @@ export default {
   
 
   router: {
-    // base: '/pasapasnew/'
+    base: 'http://pcpasapas.github.io/'
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
