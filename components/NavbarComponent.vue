@@ -74,7 +74,6 @@ export default {
 #nuxt.nuxt-link-exact-active {
     color: rgb(105, 103, 103);
     background-color: red;
-    pointer-events: none;
 } 
 .v-tab {
     font-size: 8px;
