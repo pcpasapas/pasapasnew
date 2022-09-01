@@ -11,6 +11,20 @@ jobs:
         os: [ubuntu-latest]
         node: [14]
 
+
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy my nice code
+    steps:
+    - name: Deploy to OVH hosting
+      uses: pitscher/ovh-deploy-hosting-action@v1
+      env:
+        OVH_HOSTING_USER: ${{ secrets.OVH_HOSTING_USER }}
+        OVH_HOSTING_PASSWORD: ${{ secrets.OVH_HOSTING_PASSWORD }}
+        OVH_HOSTING_DOMAIN: ssh.clusterXXX.hosting.ovh.net
+        REPOSITORY_NAME: my-repo
+        REPOSITORY_URL: https://github.com/me/my-repo.git
+
     steps:
       - name: Checkout
         uses: actions/checkout@master
@@ -31,3 +45,12 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
+      - name: Deploi
+      uses: SamKirkland/FTP-Deploy-Action@3.0.0
+      with:
+        ftp-server: ftp.cluster029.hosting.ovh.net
+        ftp-username: lqbtwnf
+        ftp-password: Webzik1411
+        git-ftp-args: --remote-root ${{ secrets.FTP_REMOTE_ROOT }}
+        local-dir: dist/
