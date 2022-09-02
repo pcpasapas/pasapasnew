@@ -1,6 +1,6 @@
 
 export default {
-  target: 'server',
+  ssr: 'true',
   
 
   router: {
