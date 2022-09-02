@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/outils", (function(a){return {data:[{outils:[{id:1,title:"Visual Studio Code",text:"Editeur de texte indispensable",img:a,url:"https:\u002F\u002Fcode.visualstudio.com\u002F"},{id:2,title:"Nuxt",text:a,img:a,url:"https:\u002F\u002Fnuxtjs.org\u002Ffr\u002F"},{id:3,title:"Henrri",text:"Factures et compta gratuite",img:a,url:a}]}],fetch:{},mutations:[]}}("")));

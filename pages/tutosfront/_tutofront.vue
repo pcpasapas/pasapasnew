@@ -6,8 +6,9 @@
 
         <h1 class="text-xl text-center">{{tutos[tutoSel-1].title}}</h1>
         <!-- Prerequis -->
-        <p class="underline">Prérequis :</p>
-        <ul v-if="tutos[tutoSel - 1].pre!= null">
+        <p v-if="tutos[tutoSel - 1].pre[0]!=''" class="underline">Prérequis :</p>
+        <p v-else>Test</p>
+        <ul>
             <li v-for="tutoSelect in tutos[tutoSel-1].pre" :key="tutoSelect.id">
                 <p v-if="tutos[tutoSelect-1] != null">
                     <NuxtLink id="nuxt2" :to="{ name: 'tutosfront-tutofront', params: { tutofront: tutoSelect } } ">👉
