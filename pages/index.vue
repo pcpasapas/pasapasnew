@@ -7,7 +7,7 @@
       <li>Tutos Html</li>
       <li>Tutos CSS</li>
     </ul>
-    <h2>Modifié le 01/09 à 18h18</h2>
+    <h2>Modifié le 01/09 à 18h18 </h2>
     <h2>Mise à jour auto</h2>
   </div>
 
