@@ -3,7 +3,9 @@
     <div>
         <NavbarComponent />
         <NuxtLink to="/tutosfront/tutosfront">Retour à la liste des tutos </NuxtLink>
+
         <h1 class="text-xl text-center">{{tutos[tutoSel-1].title}}</h1>
+        <!-- Prerequis -->
         <p class="underline">Prérequis :</p>
         <ul v-if="tutos[tutoSel - 1].pre!= null">
             <li v-for="tutoSelect in tutos[tutoSel-1].pre" :key="tutoSelect.id">
@@ -16,37 +18,36 @@
                 </p>
             </li>
         </ul>
-        <p class="underline">Instructions :</p>
+        <!-- Instructions -->
+        <div class="container">
+        <p class="underline mt-10">Instructions :</p>
         <img v-if="tutos[tutoSel - 1].img != ''" :src="require(`~/assets/images/${tutos[tutoSel - 1].img}`)" alt=""
             class="object-fill mx-auto w-full" />
-        <v-container fluid>
+        <p class="italic">{{ tutos[tutoSel - 1].text}}</p>
             <v-textarea v-if="tutos[tutoSel - 1].code != 0.0" v-model="tutos[tutoSel-1].code"
                 background-color="grey lighten-2" auto-grow filled outlined label="Code"
-                readonly="readonly">
+                readonly="readonly" class="my-0">
             </v-textarea>
-        </v-container>
-
-
-        <p>{{ tutos[tutoSel - 1].text}}
-        </p>
-        <div v-if="tutos[tutoSel - 1].resultathtml != ''" class="container">
-            <p>Voici le resultat sur votre navigateur</p>
+        <div v-if="tutos[tutoSel - 1].resultathtml != ''">
+            <p class="text-center">Voici le resultat sur votre navigateur</p>
             <img :src="require(`~/assets/images/${tutos[tutoSel - 1].resultathtml}`)" alt=""
                 class="object-fill mx-auto w-full" />
             <p v-if="tutos[tutoSel - 1].resultattext !=''">{{ tutos[tutoSel - 1].resultattext}}</p>
         </div>
-
+        </div>
+        <div class="container">
         <ul v-if="tutos[tutoSel-1].sousSujet != null">
-            <li v-for="tutoSelection in (tutos[tutoSel-1].sousSujet)" :key="tutoSelection.id">
-                {{ tutos[tutoSelection-1].title }}
+            <li v-for="tutoSelection in (tutos[tutoSel-1].sousSujet)" :key="tutoSelection.id" class="text-center mb-10">
+                <p class="text-center text-xl">{{ tutos[tutoSelection-1].title }}</p>
                 <img v-if="tutos[tutoSelection - 1].img != ''"
                     :src="require(`~/assets/images/${tutos[tutoSelection - 1].img}`)" alt=""
                     class="object-fill mx-auto w-full" />
-                <p v-if="tutos[tutoSelection - 1].code != 0.0"
-                    class="container border-solid border-2 bg-gray-200 text-center mx-auto border-gray-500">
-                    <textarea v-model="tutos[tutoSelection-1].code" style="margin: 2px; width: 770px; height: 103px;">
-                    </textarea>
+                <p v-if="tutos[tutoSelection - 1].text != ''" class="italic">{{ tutos[tutoSelection - 1].text}}
                 </p>
+                <v-textarea v-if="tutos[tutoSelection - 1].code != 0.0" v-model="tutos[tutoSelection-1].code"
+                background-color="grey lighten-2" auto-grow filled outlined label="Code"
+                readonly="readonly" class="my-0">
+                </v-textarea>
                 <div v-if="tutos[tutoSelection - 1].resultathtml != ''" class="container">
                     <p>Voici le resultat sur votre navigateur</p>
                     <img :src="require(`~/assets/images/${tutos[tutoSelection - 1].resultathtml}`)" alt=""
@@ -54,9 +55,9 @@
                     <p v-if="tutos[tutoSelection - 1].resultattext !=''">{{ tutos[tutoSelection - 1].resultattext}}
                     </p>
                 </div>
-                <p v-if="tutos[tutoSelection - 1].resultattext !=''"></p>
             </li>
         </ul>
+        </div>
 
         <p class="underline">Que faire ensuite ? :</p>
         <ul v-if="tutos[tutoSel-1].apres != null">
@@ -65,11 +66,8 @@
                     👉 {{
                     tutos[tutoSelectionne-1].title }}
                 </NuxtLink>
-
             </li>
         </ul>
-
-
     </div>
 
 
