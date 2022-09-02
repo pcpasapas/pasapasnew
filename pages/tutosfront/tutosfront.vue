@@ -2,7 +2,7 @@
 <template>
     <div>
         <NavbarComponent />
-        <h1>Tous les minis tutos en vrac : </h1>
+        <h1 class="text-center text-xl">Tous les minis tutos en vrac : </h1>
         <div class="containertutos">
             <ul>
                 <li v-for="tuto in tutosFilters" :key="tuto.id">
@@ -66,7 +66,6 @@ export default {
 
 
 .containertutos {
-    border: solid;  
     display: block;
 
 }

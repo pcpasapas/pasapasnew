@@ -1,13 +1,17 @@
 <template>
   <div>
     <NavbarComponent />
-    <h1>Bienvenue sur notre site qui va vous aider à découvrir la crétion de sites internet ! </h1>
+    <h1 class="text-center text-xl">Bienvenue sur notre site qui va vous aider à découvrir la crétion de sites internet ! </h1>
     <ul>
-      <li>Tutos Nuxt</li>
+      <li class="mx-auto">
+      <div class="container">
+      <NuxtLink to ="tutosfront/tutosfront">Tutos Nuxt<img :src="require(`~/assets/images/logos/logonuxt.png`)" /></NuxtLink>
+      </div>
+      </li>
       <li>Tutos Html</li>
       <li>Tutos CSS</li>
     </ul>
-    <h2>Modifié le 01/09 à 18h18 </h2>
+    <h2>Modifié le 02/09 à 11h11</h2>
     <h2>Mise à jour auto</h2>
   </div>
 
@@ -19,3 +23,21 @@ export default {
 
 }
 </script>
+
+<style scoped>
+h1 {
+  color: blueviolet
+}
+
+.container {
+  text-align: center;
+}
+
+a {
+  text-align: center;
+}
+
+img {
+  margin: auto;
+}
+</style>
