@@ -1,7 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template lang="vue">
     <div>
-        <NavbarComponent />
         <div id="titre">Les outils pour vous aider à développer votre site web</div>
         <ul>
             <li v-for="outil in outils">

@@ -3,7 +3,6 @@
 <!-- eslint-disable no-unused-expressions -->
 <template>
   <div class="p-1">
-    <NavbarComponent />
     <div v-if="
         panier.boitier != null ||
         panier.alimentation != null ||

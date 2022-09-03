@@ -1,6 +1,5 @@
 <template>
   <div>
-    <NavbarComponent />
     <h1 class="text-center text-xl">Bienvenue sur notre site qui va vous aider à découvrir la crétion de sites internet ! </h1>
     <ul>
       <li class="mx-auto">

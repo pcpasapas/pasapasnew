@@ -1,7 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <div>
-        <NavbarComponent />
         <NuxtLink to="/tutosfront/tutosfront">Retour à la liste des tutos </NuxtLink>
 
         <h1 class="text-xl text-center">{{tutos[tutoSel-1].title}}</h1>

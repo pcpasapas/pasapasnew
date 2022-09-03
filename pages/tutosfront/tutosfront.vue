@@ -1,7 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <div>
-        <NavbarComponent />
         <h1 class="text-center text-xl">Tous les minis tutos en vrac : </h1>
         <div class="containertutos">
             <ul>
