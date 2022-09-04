@@ -1,3 +1,4 @@
+import redirectSSL from 'redirect-ssl'
 
 export default {
   ssr: 'true',
@@ -124,6 +125,12 @@ export default {
   googleAnalytics: {
     id: 'UA-237994907-1',
   },
+
+  serverMiddleware: [
+    redirectSSL.create({
+      enabled: process.env.NODE_ENV === 'production'
+     }),
+  ]
 }
 
 
