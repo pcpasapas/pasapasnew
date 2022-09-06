@@ -31,7 +31,7 @@
             <ul class=" grid gap-1 grid-cols-4 md:grid-cols-5">
                 <li>
                     <NuxtLink id="nuxt" to="/"
-                        class="inline-flex mx-auto w-full text-xs md:text-xl py-1 rounded-lg border border-gray-200">
+                        class="inline-flex w-full text-xs md:text-xl py-1 rounded-lg border border-gray-200">
                         <p>Acceuil</p>
                     </NuxtLink>
                 </li>
